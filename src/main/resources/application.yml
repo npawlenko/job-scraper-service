@@ -1,0 +1,26 @@
+server:
+    port: 8080
+application:
+    webdriver:
+        downloadWebdriver: true
+        browser: CHROME
+        version: 125.0.6422.77
+spring:
+    profiles:
+        active: default,dev
+    cloud:
+        config:
+            enabled: false
+            retry:
+                max-attempts: 0
+    application:
+        name: job-scraper-service
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+
+logging:
+    level:
+        com.github.npawlenko.job: DEBUG
